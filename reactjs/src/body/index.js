@@ -4,7 +4,7 @@ const MainBody = () => {
     return (
         <div className="App" style={{backgroundColor: "transparent"}}>
             <header className="App-header" style={{backgroundColor: "black"}}>
-                React Main Page
+                This is the main page body of the app.
             </header>
         </div>)
 };
