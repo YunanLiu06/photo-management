@@ -1,16 +1,17 @@
 {
   "files": {
-    "main.css": "/photo-management/static/css/main.711e73df.css",
-    "main.js": "/photo-management/static/js/main.4fdc6ad7.js",
+    "main.css": "/photo-management/static/css/main.f97a7fc2.css",
+    "main.js": "/photo-management/static/js/main.a28af9b0.js",
     "static/js/488.f557ae73.chunk.js": "/photo-management/static/js/488.f557ae73.chunk.js",
-    "static/media/logo.svg": "/photo-management/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "static/media/pexels-simon73-1323550.jpg": "/photo-management/static/media/pexels-simon73-1323550.bf69ab38f1bcf686f8c7.jpg",
+    "static/media/pexels-eberhardgross-1421903.jpg": "/photo-management/static/media/pexels-eberhardgross-1421903.9a3a60423d49d88f0d8c.jpg",
     "index.html": "/photo-management/index.html",
-    "main.711e73df.css.map": "/photo-management/static/css/main.711e73df.css.map",
-    "main.4fdc6ad7.js.map": "/photo-management/static/js/main.4fdc6ad7.js.map",
+    "main.f97a7fc2.css.map": "/photo-management/static/css/main.f97a7fc2.css.map",
+    "main.a28af9b0.js.map": "/photo-management/static/js/main.a28af9b0.js.map",
     "488.f557ae73.chunk.js.map": "/photo-management/static/js/488.f557ae73.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.711e73df.css",
-    "static/js/main.4fdc6ad7.js"
+    "static/css/main.f97a7fc2.css",
+    "static/js/main.a28af9b0.js"
   ]
 }
