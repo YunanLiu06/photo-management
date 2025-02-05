@@ -1,11 +1,17 @@
 import React from "react";
-
+import './style.css'
+import { useNavigate } from "react-router-dom";
 const MainBody = () => {
+    const navigate = useNavigate();
+    const handleToDetail = () => {
+        navigate('detail');
+    }
     return (
-        <div className="App" style={{backgroundColor: "transparent"}}>
-            <header className="App-header" style={{backgroundColor: "black"}}>
+        <div className="Mainbody" >
+            <div className="Bodytext">
                 This is the main page body of the app.
-            </header>
+            </div>
+            <button className="Buttonstyle" onClick={handleToDetail} style={{}}>To Detail</button>
         </div>)
 };
 export default MainBody;

@@ -1,14 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
 import Header from './header/generalHeader';
 import MainBody from './body';
 import Footer from './footer';
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import PhotoDetail from './components/photoShowRoom';
 
 function App() {
   return (
     <>
       <Header />
-      <MainBody />
+      <Router>
+        <Routes>
+          <Route path="/photo-management" element={<MainBody />} />
+          <Route path="/photo-management/detail" element={<PhotoDetail />} />
+        </Routes>
+      </Router>
       <Footer />
     </>
   );

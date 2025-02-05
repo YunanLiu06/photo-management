@@ -1,0 +1,29 @@
+.Mainbody {
+  background-image: url('../resources/pexels-simon73-1323550.jpg');
+  background-blend-mode: multiply;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.Mainbody.Detailpage {
+  background-image: url('../resources/pexels-eberhardgross-1421903.jpg');
+}
+
+.Bodytext {
+  /* background-color: aqua; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: rgb(0, 247, 255);
+  min-height: 100vh;
+}
+
+.Buttonstyle {
+}
