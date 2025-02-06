@@ -1,17 +1,17 @@
 {
   "files": {
-    "main.css": "/photo-management/static/css/main.f97a7fc2.css",
-    "main.js": "/photo-management/static/js/main.a28af9b0.js",
+    "main.css": "/photo-management/static/css/main.9bcc633a.css",
+    "main.js": "/photo-management/static/js/main.0cd4ab98.js",
     "static/js/488.f557ae73.chunk.js": "/photo-management/static/js/488.f557ae73.chunk.js",
     "static/media/pexels-simon73-1323550.jpg": "/photo-management/static/media/pexels-simon73-1323550.bf69ab38f1bcf686f8c7.jpg",
     "static/media/pexels-eberhardgross-1421903.jpg": "/photo-management/static/media/pexels-eberhardgross-1421903.9a3a60423d49d88f0d8c.jpg",
     "index.html": "/photo-management/index.html",
-    "main.f97a7fc2.css.map": "/photo-management/static/css/main.f97a7fc2.css.map",
-    "main.a28af9b0.js.map": "/photo-management/static/js/main.a28af9b0.js.map",
+    "main.9bcc633a.css.map": "/photo-management/static/css/main.9bcc633a.css.map",
+    "main.0cd4ab98.js.map": "/photo-management/static/js/main.0cd4ab98.js.map",
     "488.f557ae73.chunk.js.map": "/photo-management/static/js/488.f557ae73.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.f97a7fc2.css",
-    "static/js/main.a28af9b0.js"
+    "static/css/main.9bcc633a.css",
+    "static/js/main.0cd4ab98.js"
   ]
 }
