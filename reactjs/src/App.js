@@ -12,7 +12,7 @@ function App() {
       <Router>
         <Routes>
           <Route path="/photo-management" element={<MainBody />} />
-          <Route path="/photo-management/detail" element={<PhotoDetail />} />
+          <Route path="/photo-management/detail/:stateName" element={<PhotoDetail />} />
         </Routes>
       </Router>
       <Footer />

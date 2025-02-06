@@ -1,6 +1,7 @@
 import React from "react";
 import './style.css'
 import { useNavigate } from "react-router-dom";
+import BodyMap from "./body";
 const MainBody = () => {
     const navigate = useNavigate();
     const handleToDetail = () => {
@@ -9,9 +10,10 @@ const MainBody = () => {
     return (
         <div className="Mainbody" >
             <div className="Bodytext">
-                This is the main page body of the app.
+                Here are the places you visited.
+                <BodyMap />
             </div>
-            <button className="Buttonstyle" onClick={handleToDetail} style={{}}>To Detail</button>
+            {/* <button className="Buttonstyle" onClick={handleToDetail} style={{}}>To Detail</button> */}
         </div>)
 };
 export default MainBody;
