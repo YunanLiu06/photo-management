@@ -1,10 +1,12 @@
 import React, { useState } from 'react';
 import SideBanner from '../components/sideBanner/sideBanner';
+import './style.css';
+import "bootstrap/dist/css/bootstrap.min.css";
+import sideImage from '../resources/side2.png';
 
 const Header = () => {
     const [showBanner, setShowBanner] = useState(false);
     const handleClick = () => {
-        console.log('clicked');
         setShowBanner(true);
     }
 
@@ -13,14 +15,31 @@ const Header = () => {
     }
     return (
         <>
-            <div class="container" style={{ position: 'fixed', backgroundColor: 'white', width: '100%' }}>
-                <div class="jumbotron">
-                    <h1>This is a header</h1>
-                    <p>This is the test header for this specific project.</p>
+            {showBanner &&
+                    <SideBanner style={{ float: 'right', position: 'relative'}} onClose={onClose} />
+            }
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{position:'fixed', width:'100%'}}>
+                <a class="navbar-brand" style={{ padding: '0px 0px 0px 15px' }} href="/photo-management">Photo Manager</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="/photo-management">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/cars">Cars</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="/resume">About Me</a>
+                        </li>
+                    </ul>
                 </div>
-                <button style={{ float: 'right' }} onClick={handleClick}> Click Me </button>
-            </div>
-            {showBanner && (<SideBanner onClose={onClose} />)}
+                {!showBanner && <button style={{ position: 'fixed', right: 0, padding: 0, border: 'none', marginRight:'15px'}} type="button" onClick={handleClick}>
+                    <img src={sideImage} alt="Button Icon" style={{ width: '35px', height: '35px' }} />
+                </button>}
+            </nav>
         </>
     )
 };

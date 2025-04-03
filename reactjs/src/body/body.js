@@ -1,19 +1,21 @@
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import USAMap from 'react-usa-map';
+import { useSelector } from "react-redux";
 
 const BodyMap = () => {
   const customizeObj = {};
-  const stateList = ['TX', 'GA', 'NC'];
-  const filler = {
-    fill: "rgb(60, 164, 255)",
-    clickHandler: (event) => alert(event.target.dataset.name),
-  };
+
+  const statesInfo = useSelector(state => state.stateInfo)
+  const stateList = [];
+  Object.keys(statesInfo).forEach(key => {
+    stateList.push(key);
+  });
+
   stateList.forEach((singleState) => {
     customizeObj[singleState] = {
-      fill: "rgb(60, 164, 255)",
+      fill: "rgb(255, 213, 0)",
       clickHandler: (event) => {
-        alert('You are checking: '+singleState);
         handleToDetail(singleState);
       },
     };
@@ -25,13 +27,15 @@ const BodyMap = () => {
 
   const navigate = useNavigate();
   const handleToDetail = (stateName) => {
-      navigate(`detail/${stateName}`);
+    navigate(`detail/${stateName}`);
   }
 
   return (
-    <div>
-      <USAMap onClick={mapHandler} customize={customizeObj} />
-    </div>
+    <>
+      <div>
+        <USAMap onClick={mapHandler} customize={customizeObj} />
+      </div>
+    </>
   )
 }
 

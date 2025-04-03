@@ -1,19 +1,32 @@
 import React from "react";
 import '../../body/style.css';
 import { useNavigate, useParams } from "react-router-dom";
+import { useSelector } from "react-redux";
+import PhotoGallery from "./photoGallery";
 
 const PhotoDetail = (photoInfo) => {
   const navigate = useNavigate();
-  const handleToDetail = () => {
-      navigate('/photo-management');
+  const handleBack = () => {
+    navigate('/photo-management');
   }
-  const { stateName } = useParams();
+  const { stateName } = useParams(); //get current state name
+  const stateList = useSelector(state => state.stateInfo);
+  const photoList = []; //all the photo name under current state
+  if (stateList[stateName]) {
+    stateList[stateName].forEach(value => {
+      photoList.push(value);
+    });
+  }
+
   return (
     <div className="Mainbody Detailpage">
       <div className="Bodytext">
-        This is the Photo Show Room page. You are viewing: {stateName}
+        <p>Welcome to Photo Showroom. The state you are viewing is: {stateName}</p>
+        <PhotoGallery imgSrc={photoList}/>
+        <div style={{ padding: '10px' }}>
+          <button type="button" class="btn btn-secondary" onClick={handleBack}>Back Home</button>
+        </div>
       </div>
-      <button className="Buttonstyle" onClick={handleToDetail} style={{}}> To Home </button>
     </div>)
 }
 
