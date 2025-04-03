@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ChevronLeft, ChevronRight } from "lucide-react";
 import { S3AccessTool } from "../../tools/s3AccessTool";
+import loadingImg from '../../resources/loading.gif';
 
 const decodePrefix = 'data:image/jpeg;base64,';
 
@@ -10,6 +11,7 @@ export default function LazyLoadGallery({ imgSrc }) {
   const [loadedImages, setLoadedImages] = useState({ 0: true }); // Load only first image initially
 
   const [imgData, setImgData] = useState();
+  const [loader, setLoader] = useState(false);
 
   useEffect(() => { //get image data from s3 with img name
     if (imgSrc[index]) {
@@ -33,16 +35,31 @@ export default function LazyLoadGallery({ imgSrc }) {
     });
   };
 
+  useEffect(() => {
+    if (imgData?.data?.body) {
+      setLoader(false);
+    } else {
+      setLoader(true);
+    }
+  }, [imgData])
+
+  console.log(loader);
   return (
     <>
       <div className="relative w-full max-w-xl mx-auto overflow-hidden rounded-lg shadow-lg">
         <AnimatePresence mode="wait">
-          {loadedImages[index] && (
+          {loadedImages[index] && (loader ?
+            <img
+              src={loadingImg}
+              alt="Funny GIF"
+              width="300"
+            />
+            :
             <motion.img
               key={index}
               src={`${decodePrefix}${imgData?.data?.body}`}
               className="w-full h-auto object-cover"
-              initial={{ opacity: 0, maxWidth: '1000px', maxHeight:'800px' }}
+              initial={{ opacity: 0, maxWidth: '1000px', maxHeight: '800px' }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
