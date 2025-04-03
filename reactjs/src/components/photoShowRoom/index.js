@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import '../../body/style.css';
 import { useNavigate, useParams } from "react-router-dom";
 import { useSelector } from "react-redux";
 import PhotoGallery from "./photoGallery";
+import UploadBanner from "../uploader";
 
 const PhotoDetail = (photoInfo) => {
   const navigate = useNavigate();
@@ -18,13 +19,22 @@ const PhotoDetail = (photoInfo) => {
     });
   }
 
+  const [showUpload, setShowUpload] = useState(false);
+  const handleSubmit = () => {
+    setShowUpload(true);
+  }
+
   return (
     <div className="Mainbody Detailpage">
+      <div style={{ position: 'fixed', zIndex: 10 }}>
+        {showUpload && <UploadBanner stateName={stateName} onClose={() => setShowUpload(false)} />}
+      </div>
       <div className="Bodytext">
         <p>Welcome to Photo Showroom. The state you are viewing is: {stateName}</p>
-        <PhotoGallery imgSrc={photoList}/>
+        <PhotoGallery imgSrc={photoList} />
         <div style={{ padding: '10px' }}>
           <button type="button" class="btn btn-secondary" onClick={handleBack}>Back Home</button>
+          <button type="button" class="btn btn-secondary" onClick={handleSubmit}>Upload Photo</button>
         </div>
       </div>
     </div>)
