@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { S3AccessTool } from "../../tools/s3AccessTool";
 import { useDispatch } from 'react-redux';
 import { setUpdateStateInfo } from '../../redux/action/stateInfo';
+import imageCompression from 'browser-image-compression';
 
 function FileUpload({stateName, onClose}) {
   const dispatch = useDispatch();
@@ -15,6 +16,12 @@ function FileUpload({stateName, onClose}) {
     e.preventDefault();
 
     if (file) {
+      const options = {
+        maxSizeMB: 1.5,           // Max size in MB
+        maxWidthOrHeight: 4096, // Resize image to within 1024px width/height
+        useWebWorker: true,
+      };
+      setFile(await imageCompression(file, options));
       const reader = new FileReader();
       reader.onloadend = async () => {
         const base64File = reader.result.split(',')[1]; // Strip out base64 prefix
