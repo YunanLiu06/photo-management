@@ -43,7 +43,6 @@ export default function LazyLoadGallery({ imgSrc }) {
     }
   }, [imgData])
 
-  console.log(loader);
   return (
     <>
       <div className="relative w-full max-w-xl mx-auto overflow-hidden rounded-lg shadow-lg">
@@ -59,7 +58,7 @@ export default function LazyLoadGallery({ imgSrc }) {
               key={index}
               src={`${decodePrefix}${imgData?.data?.body}`}
               className="w-full h-auto object-cover"
-              initial={{ opacity: 0, maxWidth: '1000px', maxHeight: '800px' }}
+              initial={{ opacity: 0, maxWidth: '1000px', maxHeight: '600px' }}
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.5 }}
