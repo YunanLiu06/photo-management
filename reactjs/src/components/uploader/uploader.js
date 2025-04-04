@@ -4,7 +4,7 @@ import { useDispatch } from 'react-redux';
 import { setUpdateStateInfo } from '../../redux/action/stateInfo';
 import imageCompression from 'browser-image-compression';
 
-function FileUpload({stateName, onClose}) {
+function FileUpload({ stateName, onClose }) {
   const dispatch = useDispatch();
   const [file, setFile] = useState(null);
 
@@ -21,27 +21,28 @@ function FileUpload({stateName, onClose}) {
         maxWidthOrHeight: 4096, // Resize image to within 1024px width/height
         useWebWorker: true,
       };
-      setFile(await imageCompression(file, options));
-      const reader = new FileReader();
-      reader.onloadend = async () => {
-        const base64File = reader.result.split(',')[1]; // Strip out base64 prefix
-        const payload = {
-          key: `${stateName}_${file.name}`, //update key to be state_fileName
-          file_body: base64File,
+      imageCompression(file, options).then(res => {
+        const reader = new FileReader();
+        reader.onloadend = async () => {
+          const base64File = reader.result.split(',')[1]; // Strip out base64 prefix
+          const payload = {
+            key: `${stateName}_${res.name}`, //update key to be state_fileName
+            file_body: base64File,
+          };
+          S3AccessTool({
+            operation: 'post',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(payload),
+          }).then(response => {
+            dispatch(setUpdateStateInfo());
+            onClose();
+          }).catch(err => console.log(err));
         };
-        S3AccessTool({
-          operation: 'post',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(payload),
-        }).then(response => {
-          dispatch(setUpdateStateInfo());
-          onClose();
-        }).catch(err => console.log(err));
-      };
 
-      reader.readAsDataURL(file); // Convert image to base64
+        reader.readAsDataURL(res); // Convert image to base64
+      });
     }
   };
 
