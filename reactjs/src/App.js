@@ -6,11 +6,22 @@ import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import PhotoDetail from './components/photoShowRoom';
 import { useDispatch } from 'react-redux';
 import { setUpdateStateInfo } from './redux/action/stateInfo';
+import { useEffect } from 'react';
+import { updateUserLogin } from './redux/action/loginUser';
+import { jwtDecode } from "jwt-decode";
 
 function App() {
   const dispatch = useDispatch();
   dispatch(setUpdateStateInfo());
-  
+
+  useEffect(() => {
+    const token = localStorage.getItem('token');
+    if (token) {
+      const decoded = jwtDecode(token);
+      dispatch(updateUserLogin(decoded));
+    }
+  })
+
   return (
     <>
       <Header />

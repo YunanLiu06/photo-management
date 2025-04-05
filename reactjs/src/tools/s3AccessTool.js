@@ -10,5 +10,5 @@ export const S3AccessTool = (payload, setRes) => {
         return;
       }
       return response;
-    }).catch(err => console.log(err));
+    }).catch(err => console.log(err));//TODO: error handling
 };

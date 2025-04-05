@@ -7,7 +7,8 @@ import UploadBanner from "../components/uploader";
 const BodyMap = () => {
   const customizeObj = {};
 
-  const statesInfo = useSelector(state => state.stateInfo)
+  const statesInfo = useSelector(state => state.stateInfo);
+  const loginUser = useSelector(state => state.loginUser);
   const stateList = [];
   Object.keys(statesInfo).forEach(key => {
     stateList.push(key);
@@ -23,7 +24,7 @@ const BodyMap = () => {
   });
 
   const mapHandler = (event) => {
-    if (!stateList.includes(event.target.dataset.name)) {
+    if (!stateList.includes(event.target.dataset.name) && loginUser?.email === 'liu4807@gmail.com') {
       setShowUpload(true);
       SetSelected(event.target.dataset.name);
     }

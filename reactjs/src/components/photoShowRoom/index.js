@@ -12,6 +12,7 @@ const PhotoDetail = (photoInfo) => {
   }
   const { stateName } = useParams(); //get current state name
   const stateList = useSelector(state => state.stateInfo);
+  const loginUser = useSelector(state => state.loginUser);
   const photoList = []; //all the photo name under current state
   if (stateList[stateName]) {
     stateList[stateName].forEach(value => {
@@ -34,7 +35,7 @@ const PhotoDetail = (photoInfo) => {
         <PhotoGallery imgSrc={photoList} />
         <div style={{ padding: '10px' }}>
           <button type="button" class="btn btn-secondary" onClick={handleBack}>Back Home</button>
-          <button type="button" class="btn btn-secondary" onClick={handleSubmit}>Upload Photo</button>
+          {loginUser?.email === 'liu4807@gmail.com' && <button type="button" class="btn btn-secondary" onClick={handleSubmit}>Upload Photo</button>}
         </div>
       </div>
     </div>)
