@@ -38,7 +38,7 @@ function FileUpload({ stateName, onClose }) {
           }).then(response => {
             dispatch(setUpdateStateInfo());
             onClose();
-          }).catch(err => console.log(err));
+          }).catch(err => console.log(err));//TODO: err handling
         };
 
         reader.readAsDataURL(res); // Convert image to base64
