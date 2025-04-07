@@ -20,6 +20,8 @@ function App() {
       const decoded = jwtDecode(token);
       if (decoded.exp>Date.now()/1000) {
         dispatch(updateUserLogin(decoded));
+      } else {
+        localStorage.clear();
       }
     }
   })
