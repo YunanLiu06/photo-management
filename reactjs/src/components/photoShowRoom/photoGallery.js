@@ -15,6 +15,7 @@ export default function LazyLoadGallery({ imgSrc }) {
 
   useEffect(() => { //get image data from s3 with img name
     if (imgSrc[index]) {
+      setLoader(true);
       S3AccessTool({ operation: 'get', 'key': imgSrc[index] }, setImgData);
     }
   }, [index, imgSrc]);

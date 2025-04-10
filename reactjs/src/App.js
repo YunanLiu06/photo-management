@@ -9,6 +9,8 @@ import { setUpdateStateInfo } from './redux/action/stateInfo';
 import { useEffect } from 'react';
 import { updateUserLogin } from './redux/action/loginUser';
 import { jwtDecode } from "jwt-decode";
+import ResumePage from './components/resumeRoom';
+import CarPage from './components/carPage';
 
 function App() {
   const dispatch = useDispatch();
@@ -18,7 +20,11 @@ function App() {
     const token = localStorage.getItem('token');
     if (token) {
       const decoded = jwtDecode(token);
-      dispatch(updateUserLogin(decoded));
+      if (decoded.exp>Date.now()/1000) {
+        dispatch(updateUserLogin(decoded));
+      } else {
+        localStorage.clear();
+      }
     }
   })
 
@@ -29,6 +35,8 @@ function App() {
         <Routes>
           <Route path="/photo-management" element={<MainBody />} />
           <Route path="/photo-management/detail/:stateName" element={<PhotoDetail />} />
+          <Route path="/cars" element={<CarPage />} />
+          <Route path="/resume" element={<ResumePage />} />
         </Routes>
       </Router>
       <Footer />

@@ -22,7 +22,7 @@ const Header = () => {
             {showBanner &&
                     <SideBanner style={{ float: 'right', position: 'relative'}} onClose={onClose} />
             }
-            <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{position:'fixed', width:'100%'}}>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light" style={{position:'fixed', width:'100%', zIndex:'1000'}}>
                 <a class="navbar-brand" style={{ padding: '0px 0px 0px 15px' }} href="/photo-management">Photo Manager</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
