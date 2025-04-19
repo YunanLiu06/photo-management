@@ -20,7 +20,7 @@ function App() {
     const token = localStorage.getItem('token');
     if (token) {
       const decoded = jwtDecode(token);
-      if (decoded.exp>Date.now()/1000) {
+      if (decoded.exp > Date.now() / 1000) {
         dispatch(updateUserLogin(decoded));
       } else {
         localStorage.clear();
