@@ -31,10 +31,10 @@ function App() {
   return (
     <>
       <Header />
-      <Router>
+      <Router basename='/photo-management'>
         <Routes>
-          <Route path="/photo-management" element={<MainBody />} />
-          <Route path="/photo-management/detail/:stateName" element={<PhotoDetail />} />
+          <Route path="/" element={<MainBody />} />
+          <Route path="/detail/:stateName" element={<PhotoDetail />} />
           <Route path="/cars" element={<CarPage />} />
           <Route path="/resume" element={<ResumePage />} />
         </Routes>

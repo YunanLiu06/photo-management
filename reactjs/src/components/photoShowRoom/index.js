@@ -8,7 +8,7 @@ import UploadBanner from "../uploader";
 const PhotoDetail = (photoInfo) => {
   const navigate = useNavigate();
   const handleBack = () => {
-    navigate('/photo-management');
+    navigate('/');
   }
   const { stateName } = useParams(); //get current state name
   const stateList = useSelector(state => state.stateInfo);

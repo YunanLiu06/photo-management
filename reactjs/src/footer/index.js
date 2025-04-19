@@ -15,8 +15,8 @@ const Footer = () => {
           </div>
 
           <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-            <li class="ms-3"><a href="https://www.youtube.com/@louislew5545"><FontAwesomeIcon class="icon-cog blackiconcolor" icon={faYoutube} style={{ width: '25px', height: '25px', marginTop: '3px', color:'red' }} /></a></li>
-            <li class="ms-3"><a href="https://www.instagram.com/luyul_06/"><FontAwesomeIcon icon={faInstagram} style={{ width: '25px', height: '25px', marginTop: '3px' }} /></a></li>
+            <li class="ms-2"><a href="https://www.youtube.com/@louislew5545"><FontAwesomeIcon class="icon-cog blackiconcolor" icon={faYoutube} style={{ width: '25px', height: '25px', marginTop: '3px', color:'red' }} /></a></li>
+            <li class="ms-2"><a href="https://www.instagram.com/luyul_06/"><FontAwesomeIcon icon={faInstagram} style={{ width: '25px', height: '25px', marginTop: '3px' }} /></a></li>
           </ul>
         </footer>
       </div>
