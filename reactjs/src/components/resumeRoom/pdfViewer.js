@@ -15,7 +15,7 @@ export default function MyPDFViewer() {
   }, []);
 
   return (
-    <div style={{ width: '100%', display: 'flex', justifyContent: 'center' }}>
+    <div>
       <Document
         file={resume}// can also be a URL or Blob
       >
