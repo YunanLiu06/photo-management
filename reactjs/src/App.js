@@ -11,10 +11,12 @@ import { updateUserLogin } from './redux/action/loginUser';
 import { jwtDecode } from "jwt-decode";
 import ResumePage from './components/resumeRoom';
 import CarPage from './components/carPage';
+import { setUpdateCarPic } from './redux/action/carPicInfo';
 
 function App() {
   const dispatch = useDispatch();
   dispatch(setUpdateStateInfo());
+  dispatch(setUpdateCarPic());
 
   useEffect(() => {
     const token = localStorage.getItem('token');
