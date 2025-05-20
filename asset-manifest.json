@@ -1,20 +1,20 @@
 {
   "files": {
-    "main.css": "/photo-management/static/css/main.ef89bc56.css",
-    "main.js": "/photo-management/static/js/main.fe2230da.js",
+    "main.css": "/photo-management/static/css/main.089b172e.css",
+    "main.js": "/photo-management/static/js/main.e4da41c6.js",
     "static/js/488.f557ae73.chunk.js": "/photo-management/static/js/488.f557ae73.chunk.js",
     "static/media/DSC06768.jpg": "/photo-management/static/media/DSC06768.0569075b22f81d94b98b.jpg",
-    "static/media/resume.pdf": "/photo-management/static/media/resume.04d520eb225a75bc015d.pdf",
     "static/media/DSC09475.jpg": "/photo-management/static/media/DSC09475.0d226a994647d5043e6d.jpg",
+    "static/media/resume.pdf": "/photo-management/static/media/resume.c018f4d7da83dfc075ce.pdf",
     "static/media/loading.gif": "/photo-management/static/media/loading.42aaa181adb3af3bef08.gif",
     "static/media/side2.png": "/photo-management/static/media/side2.510d837b0932993fadc9.png",
     "index.html": "/photo-management/index.html",
-    "main.ef89bc56.css.map": "/photo-management/static/css/main.ef89bc56.css.map",
-    "main.fe2230da.js.map": "/photo-management/static/js/main.fe2230da.js.map",
+    "main.089b172e.css.map": "/photo-management/static/css/main.089b172e.css.map",
+    "main.e4da41c6.js.map": "/photo-management/static/js/main.e4da41c6.js.map",
     "488.f557ae73.chunk.js.map": "/photo-management/static/js/488.f557ae73.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.ef89bc56.css",
-    "static/js/main.fe2230da.js"
+    "static/css/main.089b172e.css",
+    "static/js/main.e4da41c6.js"
   ]
 }
